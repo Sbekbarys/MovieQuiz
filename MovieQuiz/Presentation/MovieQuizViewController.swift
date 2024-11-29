@@ -50,6 +50,7 @@ final class MovieQuizViewController: UIViewController {
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.imageView.layer.borderColor = UIColor.clear.cgColor
             self.showNextQuestionOrResults()
 
             self.yesButton.isEnabled = true
