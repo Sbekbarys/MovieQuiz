@@ -32,6 +32,17 @@ final class MovieQuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadQuestion(at: currentQuestionIndex)
+        textLabel.font = UIFont(name: "YSDisplay-Bold", size: 23)
+        counterLabel.font = UIFont(name: "YSDisplay-Medium", size: 20)
+        yesButton.titleLabel?.font = UIFont(name: "YSDisplay-Medium", size: 20)
+        noButton.titleLabel?.font = UIFont(name: "YSDisplay-Medium", size: 20)
+        
+        self.view.backgroundColor = UIColor.ypBlack
+        textLabel.textColor = UIColor.ypWhite
+        counterLabel.textColor = UIColor.ypWhite
+        yesButton.titleLabel?.textColor = UIColor.ypBlack
+        noButton.titleLabel?.textColor = UIColor.ypBlack
+        
     }
     
     // MARK: - IB Actions
@@ -70,7 +81,7 @@ final class MovieQuizViewController: UIViewController {
     private func showAnswerResult(isCorrect: Bool) {
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 8
-        imageView.layer.borderColor = isCorrect ? UIColor.green.cgColor : UIColor.red.cgColor
+        imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
     }
     
     private func showNextQuestionOrResults() {
